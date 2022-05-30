@@ -1,10 +1,13 @@
 
 import './App.css';
+import SearchBar from './Components/SearchBar';
 
 function App() {
   return (
     <div className="App">
-       <h1>bh-weather-forecaster-project</h1>
+
+        < SearchBar />
+        
     </div>
   );
 }
