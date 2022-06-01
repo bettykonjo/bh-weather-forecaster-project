@@ -9,14 +9,14 @@ function DayCard() {
       {weatherdatas && weatherdatas.map((weatherdata) => {
           return (
             <div className="weathers" key={weatherdata.id}>
-              <strong>{weatherdata.wind_cdir_full}</strong>
-              {weatherdata.weather && weatherdata.weather.map( data =>{
+              <strong>{weatherdata.city_name}</strong>
+              {/* {weatherdata.weather && weatherdata.weather.map( data =>{
                 return(
                   <div key={weatherdata.id}>
                     {data.description}
                   </div>
                 )
-              })}
+              })} */}
             </div>
           );
         })}
