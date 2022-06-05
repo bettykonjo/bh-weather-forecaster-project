@@ -1,6 +1,7 @@
 
 import './App.css';
 import DayCard from './Components/DayCard';
+import Footer from './Components/Footer';
 import SearchBar from './Components/SearchBar';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
        <  SearchBar />
        < DayCard />
+       <Footer/>
     </div>
   );
 }
