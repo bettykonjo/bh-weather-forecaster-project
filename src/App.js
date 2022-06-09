@@ -1,17 +1,22 @@
-
-import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './pages/Layout';
+import NotFound from './pages/NotFound';
 import DayCard from './Components/DayCard';
-import Footer from './Components/Footer';
-import SearchBar from './Components/SearchBar';
+import DayCards from './Components/DayCards';
+import DayDetails from './Components/DayDetails'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-       <  SearchBar />
-       < DayCard />
-       <Footer/>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<DayCard />} />
+        <Route path="DayCards" element={<DayCards />} />
+        <Route path="DayCards/:id" element={<DayDetails />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;
