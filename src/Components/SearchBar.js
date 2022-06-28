@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const SearchBarWrapper = styled.div`
@@ -26,7 +26,6 @@ const SearchBarWrapper = styled.div`
     color: blue;
   }
   button {
-    background-color: green;
     color: white;
     float: left;
     padding-bottom: 6px;
@@ -34,6 +33,10 @@ const SearchBarWrapper = styled.div`
 `;
 
 const SearchBar = ({ locations, setLocations, getGeoData }) => {
+  const [isDisabled, setIsDisabled] = useState(false);
+  const [buttonColor, setButtonColor] = useState('green');
+  const newButtonColor = buttonColor === 'green' ? 'grey' : 'green';
+
   const onSubmit = (e) => {
     e.preventDefault();
     getGeoData();
@@ -41,14 +44,22 @@ const SearchBar = ({ locations, setLocations, getGeoData }) => {
   return (
     <SearchBarWrapper>
       <form onSubmit={onSubmit}>
-        <h1>Weather info for, {locations}:</h1>
+        <h1>Weather info for: {locations}</h1>
         <input
           type="text"
           placeholder="search for weather info"
           value={locations}
           onChange={(e) => setLocations(e.target.value)}
         />
-        <button type="submit">Search</button>
+        <button
+          data-testid="colorButton"
+          style={{
+            color: 'white',
+            backgroundColor: isDisabled ? 'gray' : buttonColor,
+          }}
+          type="button"
+          onClick={() => setButtonColor(newButtonColor)}
+          disabled={isDisabled}> Search</button>
       </form>
     </SearchBarWrapper>
   );
