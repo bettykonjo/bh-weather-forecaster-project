@@ -5,9 +5,10 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 const DayCardsWrapper = styled.div`
 .information{
-  border-radius: 1px solid black;
+  
 }
    .info{
+
   background-color: wheat;
   border-radius: 5px;
   margin: 15px;
