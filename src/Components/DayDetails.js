@@ -14,9 +14,6 @@ justify-content: space-around;
 flex-direction:row;
 text-align:center;
 box-shadow: 5px 5px green;
-h1{
-  color:blue;
-}
 `;
 
 const DayDetails = ({days}) => {
@@ -30,9 +27,9 @@ const DayDetails = ({days}) => {
   };
   return (
     <DayDetail>   
-      <h1> Forcast Details for...</h1>
-      <h3>{moment(valid_date).format('dddd DD MMMM')}</h3>
-      <p className='temp'><strong>temp:{temp}</strong></p>
+      <h1> Forcast Details for</h1>
+      <h1>{moment(valid_date).format('dddd DD MMMM')}</h1>
+      <h3 className='temp'><strong>temp:{temp}</strong></h3>
       <div className='img'>      
         <img 
        src={`https://www.weatherbit.io/static/img/icons/${weather.icon}.png`} alt="weather icon"

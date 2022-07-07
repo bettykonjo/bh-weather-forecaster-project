@@ -25,7 +25,7 @@ const App = () => {
         const { lat } = response.data[0];
         const { lon } = response.data[0];
         fetch(
-          `https://api.weatherbit.io/v2.0/forecast/daily?lat=${lat}&lon=${lon}&units=I&days=7&key=23ae0b19a93d436781841a8304deacc1`,
+          `https://api.weatherbit.io/v2.0/forecast/daily?lat=${lat}&lon=${lon}&units=I&days=7&key=5223a87543244991a0b6bee06e923073`,
         )
           .then((response) => response.json())
           .then((data) => {

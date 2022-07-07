@@ -17,7 +17,7 @@ const FooterWrapper = styled.footer`
 const Footer = () => {
   return (
     <FooterWrapper>
-      <h3>Betelihem A Hayle © {new Date().getFullYear()}</h3>
+      <h3> By Betelihem A Hayle © {new Date().getFullYear()}</h3>
     </FooterWrapper>
   );
 };

@@ -4,35 +4,26 @@ import styled from 'styled-components';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const DayCardsWrapper = styled.div`
+.information{
+  
+}
    .info{
+
   background-color: wheat;
   border-radius: 5px;
   margin: 15px;
   flex-wrap: wrap;
   flex-direction: row;
     }
-  h5 {
-    /* background-color: green; */
-  }
-
 `;
 const DayCards = ({ weekdays, daynum }) => {
-
   const navigate = useNavigate();
-    // const { id:selectedDay } = useParams();
-  const { ts:selectedDay  } = useParams();
- 
-  // const { ts } = useParams();
-  
+  const { ts:selectedDay  } = useParams();  
   const singledayinfo = (e) => {
     navigate(`/DayDetails/${daynum}`);
-    // navigate(`/DayDetails/${ weekdays.ts}`);
   };
-  
 
   return (
-    
-    
     <DayCardsWrapper selectedDay={ selectedDay } onClick={singledayinfo}>    
       {  
        <div className='information'>
@@ -56,7 +47,6 @@ const DayCards = ({ weekdays, daynum }) => {
           </div>
         </div>
         </div>
-        
       }
     </DayCardsWrapper>  
     

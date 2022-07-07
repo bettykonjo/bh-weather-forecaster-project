@@ -1,13 +1,9 @@
 
 
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import styled from 'styled-components';
-import getadress from '../geo-api';
 import DayCards from './DayCards';
 import SearchBar from './SearchBar';
-// import getadressnew from '../apinew'
-import axios from 'axios';
 
 const MainWrapper = styled.div`
   display: flex;
@@ -32,8 +28,6 @@ console.log(weathers)
             daynum = {i + 1}
             weekdays={weekdays}
             key={weekdays.ts}
-            // High={weekdays.high_temp}
-            // Low={weekdays.low_temp}
           />
         ))}
       </MainWrapper>
