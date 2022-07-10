@@ -11,12 +11,7 @@ const App = () => {
   const [weathers, setWeathers] = useState([]);
   const [locations, setLocations] = useState(null);
   const { daynum } = useParams();
-  console.log(daynum);
-  // const [weatherDetails, setWeatherDetails] = useState({});
-  // const [eachDay, setEachDay] = useState(null)
-  // const [loading, setLoading] = useState(false);
-  //  const [city, setCity] = useState('');
-  // const apiKey = process.env.REACT_APP_API_KEY; 
+  console.log(daynum); 
   const apiKey = process.env.REACT_APP_API_KEY;
   const getGeoData = () => {
     getadress(locations)
