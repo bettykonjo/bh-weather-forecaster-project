@@ -6,8 +6,9 @@ const SearchBarWrapper = styled.div`
   color: blue;
   align-content: flex-end;
   text-align: flex-end;
+  margin:40px;
   h1 {
-    margin: 1rem 0;
+    margin:40px;
     text-align: start;
   }
   search-box {
@@ -15,9 +16,9 @@ const SearchBarWrapper = styled.div`
   }
   input {
     font-size: 18px;
-    width: 60%;
-    height: 60%;
-    background-color: white;
+    width: 40%;
+    /* height: 60%; */
+    background-color:white;
     color: black;
     float: left;
   }
@@ -26,16 +27,23 @@ const SearchBarWrapper = styled.div`
     color: blue;
   }
   button {
-    color: white;
+    color:black;
     float: left;
     padding-bottom: 6px;
+    background-color: lightblue; 
+    :hover {
+    cursor: pointer;
+    transform:scale(1.1);
+    color:black;
+    background-color:lightgreen;
+    }
   }
 `;
 
 const SearchBar = ({ locations, setLocations, getGeoData }) => {
-  const [isDisabled, setIsDisabled] = useState(false);
-  const [buttonColor, setButtonColor] = useState('green');
-  const newButtonColor = buttonColor === 'green' ? 'grey' : 'green';
+  // const [isDisabled, setIsDisabled] = useState(false);
+  // const [buttonColor, setButtonColor] = useState('green');
+  // const newButtonColor = buttonColor === 'green' ? 'grey' : 'green';
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -51,7 +59,7 @@ const SearchBar = ({ locations, setLocations, getGeoData }) => {
           value={locations}
           onChange={(e) => setLocations(e.target.value)}
         />
-        <button
+        {/* <button
           data-testid="colorButton"
           style={{
             color: 'white',
@@ -59,7 +67,8 @@ const SearchBar = ({ locations, setLocations, getGeoData }) => {
           }}
           type="button"
           onClick={() => setButtonColor(newButtonColor)}
-          disabled={isDisabled}> Search</button>
+          disabled={isDisabled}> Search</button> */}
+          <button> Search</button>
       </form>
     </SearchBarWrapper>
   );

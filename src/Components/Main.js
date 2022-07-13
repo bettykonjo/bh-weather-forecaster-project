@@ -7,7 +7,6 @@ import SearchBar from './SearchBar';
 
 const MainWrapper = styled.div`
   display: flex;
-  width: 100%;
 `;
 
 const Main = ({locations, weathers, setLocations, getGeoData}) => {
