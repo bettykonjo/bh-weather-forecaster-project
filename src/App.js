@@ -11,12 +11,7 @@ const App = () => {
   const [weathers, setWeathers] = useState([]);
   const [locations, setLocations] = useState(null);
   const { daynum } = useParams();
-  console.log(daynum);
-  // const [weatherDetails, setWeatherDetails] = useState({});
-  // const [eachDay, setEachDay] = useState(null)
-  // const [loading, setLoading] = useState(false);
-  //  const [city, setCity] = useState('');
-  // const apiKey = process.env.REACT_APP_API_KEY; 
+  console.log(daynum); 
   const apiKey = process.env.REACT_APP_API_KEY;
   const getGeoData = () => {
     getadress(locations)
@@ -24,8 +19,9 @@ const App = () => {
         console.log(response.data);
         const { lat } = response.data[0];
         const { lon } = response.data[0];
+        const WEATHER_KEY = process.env.REACT_APP_Weather_KEY;
         fetch(
-          `https://api.weatherbit.io/v2.0/forecast/daily?lat=${lat}&lon=${lon}&units=I&days=7&key=5223a87543244991a0b6bee06e923073`,
+          `https://api.weatherbit.io/v2.0/forecast/daily?lat=${lat}&lon=${lon}&units=I&days=7&key=${WEATHER_KEY}`,
         )
           .then((response) => response.json())
           .then((data) => {

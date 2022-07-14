@@ -5,51 +5,54 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 const DayCardsWrapper = styled.div`
 .information{
-  
-}
-   .info{
-
-  background-color: wheat;
+  width:80%;
+  background-color: lightblue;
   border-radius: 5px;
-  margin: 15px;
+  margin: 40px;
   flex-wrap: wrap;
   flex-direction: row;
+  
+  :hover {
+    cursor: pointer;
+    transform:scale(1.1);
+    color:black;
+    background-color:lightgreen;
+    }
     }
 `;
 const DayCards = ({ weekdays, daynum }) => {
   const navigate = useNavigate();
-  const { ts:selectedDay  } = useParams();  
+  const { ts: selectedDay } = useParams();
   const singledayinfo = (e) => {
     navigate(`/DayDetails/${daynum}`);
   };
 
   return (
-    <DayCardsWrapper selectedDay={ selectedDay } onClick={singledayinfo}>    
-      {  
-       <div className='information'>
-        <h5>{moment(weekdays.valid_date).format('dddd')}</h5>
-        <div className="info"> 
+    <DayCardsWrapper selectedDay={selectedDay} onClick={singledayinfo}>
+      {
+        <div className="information">
+          <h2>{moment(weekdays.valid_date).format('dddd')}</h2>
           <div className='temp'>
-            <strong>temp</strong>:{weekdays.temp}
+            <strong>temp</strong>:{weekdays.temp}<sup>°F</sup>
           </div>
           <img
             src={`https://www.weatherbit.io/static/img/icons/${weekdays.weather.icon}.png`}
             alt="weather icon"
           />
           <div className='maxt'>
-            <strong>High</strong>:{weekdays.high_temp}
+            <strong>High</strong>:{weekdays.high_temp}<sup>°F</sup>
           </div>
           <div className='mint'>
-            <strong>Low</strong>:{weekdays.low_temp}
+            <strong>Low</strong>:{weekdays.low_temp}<sup>°F</sup>
           </div>
           <div className='precip'>
             <strong>precip</strong>:{weekdays.precip}%
           </div>
         </div>
-        </div>
+
       }
-    </DayCardsWrapper>  
-    
+    </DayCardsWrapper>
+
   );
 };
 
